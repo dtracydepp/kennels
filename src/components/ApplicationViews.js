@@ -24,9 +24,13 @@ export const ApplicationViews = (props) => {
                 <LocationProvider>
                     <CustomerProvider>
                         {/* Render the animal list when http://localhost:3000/animals */}
-                        <Route path="/animals">
-                            <AnimalList />
-                        </Route>
+                        <Route exact path="/animals" render={
+                            props => <AnimalList {...props} />
+                        }/>
+                        
+                        <Route exact path="/animals/create" render={
+                            props => <AnimalForm {...props}/>
+                        } />
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
@@ -45,6 +49,7 @@ export const ApplicationViews = (props) => {
                     </EmployeeProvider>
                 </LocationProvider>
             </AnimalProvider>
+
         </>
     )
 }
