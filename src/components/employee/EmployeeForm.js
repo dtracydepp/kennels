@@ -5,6 +5,7 @@ import { AnimalContext } from "../animal/AnimalProvider"
 import "./Employee.css"
 
 export const EmployeeForm = (props) => {
+
     const { addEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { animals, getAnimals } = useContext(AnimalContext)
@@ -85,6 +86,7 @@ export const EmployeeForm = (props) => {
                     </select>
                 </div>
             </fieldset>
+            
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
